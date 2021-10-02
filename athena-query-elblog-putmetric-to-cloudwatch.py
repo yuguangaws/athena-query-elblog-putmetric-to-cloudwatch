@@ -19,8 +19,12 @@ def queryexec():
             'OutputLocation': output
         }
     )["QueryExecutionId"]
+    if queryid is not None:
+        pass
+    else
+        print("The queryid is not generated yet")
+        break
     return queryid
-
 
 def querystatus():
     QID = queryexec()
@@ -37,6 +41,11 @@ def querystatus():
 def queryresult():
     QID = queryexec()
     response = client.get_query_results(QueryExecutionId="%s" %(QID,))
+    if response is not None:
+        pass
+    else
+        print("This is query is not finished yet")
+        break
     return response["ResultSet"]["Rows"][1]["Data"][0]["VarCharValue"]
 
 def put_metris():
